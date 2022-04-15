@@ -1,0 +1,21 @@
+.assembly extern legacy library mscorlib {}
+
+.assembly ldnull.exe{}
+
+.class public _ldnull {
+
+.method public static int32 main() {
+.entrypoint
+.maxstack	10
+	ldnull
+	ldnull
+	ceq
+	brfalse	FAIL
+PASS:
+	ldc.i4 100
+	ret
+FAIL:
+	ldc.i4	0x0
+	ret
+}
+}
